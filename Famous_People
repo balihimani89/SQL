@@ -1,0 +1,57 @@
+/* Create table about the people and what they do here */
+CREATE TABLE MOVIE_STARS(id integer primary KEY, name TEXT);
+INSERT INTO MOVIE_STARS(NAME) VALUES("A");
+INSERT INTO MOVIE_STARS(NAME) VALUES("B");
+INSERT INTO MOVIE_STARS(NAME) VALUES("C");
+INSERT INTO MOVIE_STARS(NAME) VALUES("D");
+INSERT INTO MOVIE_STARS(NAME) VALUES("E");
+INSERT INTO MOVIE_STARS(NAME) VALUES("A1");
+INSERT INTO MOVIE_STARS(NAME) VALUES("B1");
+INSERT INTO MOVIE_STARS(NAME) VALUES("C1");
+INSERT INTO MOVIE_STARS(NAME) VALUES("D1");
+INSERT INTO MOVIE_STARS(NAME) VALUES("E1");
+INSERT INTO MOVIE_STARS(NAME) VALUES("A2");
+INSERT INTO MOVIE_STARS(NAME) VALUES("B2");
+INSERT INTO MOVIE_STARS(NAME) VALUES("C2");
+INSERT INTO MOVIE_STARS(NAME) VALUES("D2");
+INSERT INTO MOVIE_STARS(NAME) VALUES("E2");
+
+SELECT *FROM MOVIE_STARS;
+
+CREATE TABLE COUPLE(id integer primary KEY, Name INTEGER, Spouce INTEGER);
+
+INSERT INTO COUPLE(Name,Spouce) VALUES(1,2);
+INSERT INTO COUPLE(Name,Spouce) VALUES(3,4);
+SELECT *FROM COUPLE;
+
+CREATE TABLE movies(id integer primary KEY,Name INTEGER, Movie_Name TEXT );
+INSERT INTO movies(Name,Movie_Name) VALUES(1,"aa");
+INSERT INTO movies(Name,Movie_Name) VALUES(2,"aa");
+INSERT INTO movies(Name,Movie_Name) VALUES(3,"bb");
+INSERT INTO movies(Name,Movie_Name) VALUES(3,"bb");
+INSERT INTO movies(Name,Movie_Name) VALUES(3,"bb");
+INSERT INTO movies(Name,Movie_Name) VALUES(1,"aa");
+INSERT INTO movies(Name,Movie_Name) VALUES(2,"aa");
+INSERT INTO movies(Name,Movie_Name) VALUES(4,"bb");
+INSERT INTO movies(Name,Movie_Name) VALUES(5,"bb");
+INSERT INTO movies(Name,Movie_Name) VALUES(3,"bb");
+INSERT INTO movies(Name,Movie_Name) VALUES(1,"aa1");
+INSERT INTO movies(Name,Movie_Name) VALUES(2,"aa1");
+INSERT INTO movies(Name,Movie_Name) VALUES(3,"bb1");
+INSERT INTO movies(Name,Movie_Name) VALUES(4,"bb1");
+INSERT INTO movies(Name,Movie_Name) VALUES(4,"bb1");
+INSERT INTO movies(Name,Movie_Name) VALUES(1,"aa2");
+INSERT INTO movies(Name,Movie_Name) VALUES(5,"aa2");
+INSERT INTO movies(Name,Movie_Name) VALUES(5,"bb2");
+INSERT INTO movies(Name,Movie_Name) VALUES(3,"bb2");
+INSERT INTO movies(Name,Movie_Name) VALUES(3,"bb2");
+SELECT *FROM movies;
+
+
+select a.Name,b.Name from couple 
+join movie_stars a on couple.Name=a.id
+join movie_stars b on couple.Spouce=b.id;
+
+select movies.Movie_Name,MOVIE_STARS.name from movies 
+LEFT outer JOIN MOVIE_STARS  ON movies.name=MOVIE_STARS.id;
+
